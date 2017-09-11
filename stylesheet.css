@@ -1,0 +1,36 @@
+body, html{
+	height: 100%;
+
+	/*font-family: "Oxygen";*/
+}
+
+.parallax{
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#about, #projects{
+	position: relative;
+	top: 25%;
+	width: 75%;
+	margin: auto;
+}
+
+#flowers{
+	background-image: linear-gradient(to bottom, white 50%,black 100%), url("flowers.jpg");
+	background-blend-mode: multiply;
+	height: 93%;
+}
+
+#downarrow{
+	height: 7%;
+}
+
+#space{
+	background-image: linear-gradient(to top, white 50%,black 100%), url("space.jpg");
+	background-blend-mode: multiply;
+	height: 100%;
+	background-position: top;
+}
