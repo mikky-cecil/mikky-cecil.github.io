@@ -4,6 +4,28 @@ body, html{
 	/*font-family: "Oxygen";*/
 }
 
+h1{
+	font-family: "Audiowide", cursive;
+}
+
+.brand{
+	font-family: "Audiowide", cursive;
+}
+
+/*.brand-light{
+	font-family: "Audiowide", cursive;
+	background: linear-gradient(to top, #FCD3D3 25%, #F7CAF9 50%, #66E2FF 75%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+.brand-dark{
+	font-family: "Audiowide", cursive;
+	background: linear-gradient(to top, #21BAA0 0%, #BA509A 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}*/
+
 .parallax{
 	background-attachment: fixed;
 	background-position: center;
@@ -11,16 +33,15 @@ body, html{
 	background-size: cover;
 }
 
-#about, #projects{
+.my-content{
 	position: relative;
 	top: 25%;
 	width: 75%;
 	margin: auto;
 }
 
-#flowers{
-	background-image: linear-gradient(to bottom, white 50%,black 100%), url("flowers.jpg");
-	background-blend-mode: multiply;
+#about{
+	background-image: linear-gradient(to bottom, #000000 0%, #1B183F 50%, #233470 70%, #FFBAD3 100%);
 	height: 93%;
 }
 
@@ -28,8 +49,9 @@ body, html{
 	height: 7%;
 }
 
-#space{
-	background-image: linear-gradient(to top, white 50%,black 100%), url("space.jpg");
+#projects{
+	/*background-image: linear-gradient(to top, white 50%,black 100%), url("space.jpg");*/
+	background-image: linear-gradient(to bottom, white 50%,black 100%), url("flowers.jpg");
 	background-blend-mode: multiply;
 	height: 100%;
 	background-position: top;
