@@ -1,15 +1,16 @@
+var twinkle = function(star){
+	setTimeout(function(){
+		star.toggle(500);
+		star.toggle(500);
+		twinkle(star);
+	}, Math.floor(Math.random() * 10000));
+}
+
 var buildStars = function(container){
- //   width: 140px;
- //   height: 140px;
- //   background: blue; 
- //   -moz-border-radius: 70px; 
- //   -webkit-border-radius: 70px; 
- //   border-radius: 70px;
 
  	var getTop = function(){
  		var top = Math.random() * 70;
  		if ((Math.random() * 100) >= 25){
- 			console.log("sub");
  			top -= (top*.5);
  		}
 
@@ -26,6 +27,7 @@ var buildStars = function(container){
  			"rgba(255, 240, 240, 1)"][Math.floor(Math.random() * 6)]; /* yellow */
  	}
 
+ 	/* make sure the stars are underneath the content */
  	container.find(".my-content").css("z-index", 1);
 
  	for (var i = 0; i < 400; i++){
@@ -38,22 +40,30 @@ var buildStars = function(container){
  		var top = getTop();
  		var left = Math.floor(Math.random() * 100);
  		var g = "(" + color + ", rgba(0,0,0,0))";
- 		container.append($("<div class=\"star\"></div>").css({
+ 		var starColors = {
+ 			"background": "-webkit-radial-gradient" + g, /* Safari 5.1- 6.0 */
+  			"background": "-o-radial-gradient" + g, /* Opera 11.6-12.0 */
+  			"background": "-moz-radial-gradient" + g, /* Firefox 3.6-15 */
+  			"background": "radial-gradient" + g
+ 		}
+ 		var star = $("<div class=\"star\"></div>").css($.extend({
+ 			"display": "block",
+ 			"background": color,
  			"position": "absolute",
  			"z-index": "0",
  			"top": top + "%",
  			"left": left + "%",
  			"width": size + "px",
  			"height": size + "px",
- 			"background": color,
  			"-moz-border-radius": (size/2) + "px",
  			"-webkit-border-radius": (size/2) + "px",
- 			"border-radius": (size/2) + "px",
- 			"background": "-webkit-radial-gradient" + g, /* Safari 5.1- 6.0 */
-  			"background": "-o-radial-gradient" + g, /* Opera 11.6-12.0 */
-  			"background": "-moz-radial-gradient" + g, /* Firefox 3.6-15 */
-  			"background": "radial-gradient" + g
- 		}));
+ 			"border-radius": (size/2) + "px"
+ 		}, starColors));
+ 		container.append(star);
+
+ 		with ({x:star}){
+	 		twinkle(x);
+	 	}
  	}
 };
 
