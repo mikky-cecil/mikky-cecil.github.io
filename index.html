@@ -10,8 +10,9 @@
     <!-- Libraries -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<script src="https://use.fontawesome.com/91d6c4113e.js"></script>
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland|Megrim|Metal+Mania|Modak|Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland|Megrim|Metal+Mania|Modak|Press+Start+2P|Inconsolata|Raleway" rel="stylesheet">
 
 	<!-- Mine -->
 	<link rel="stylesheet" href="stylesheet.css">
@@ -22,22 +23,33 @@
 <body data-spy="scroll" data-target="#navbar1">
 
 <nav class="navbar fixed-top navbar-dark bg-dark" id="navbar1">
-	<span class="nav-item navbar-brand brand">Mikky Cecil</span>
-	<a class="nav-item nav-link" href="#about">About</a>
-	<a class="nav-item nav-link" href="#projects">Projects</a>
-	<span class="navbar-text">Web and Mobile Developer, recent OSU Graduate</span>
+	<ul class="nav">
+	<li class="nav-item"><span class="nav-item navbar-brand brand">Mikky Cecil</span></li>
+	<li class="nav-item"><button class="sm-icon btn btn-outline-light"><i class="fa fa-linkedin" aria-hidden="true"></i></button></li>
+	<li class="nav-item"><button class="sm-icon btn btn-outline-light"><i class="fa fa-github" aria-hidden="true"></i></button></li>
+	<li class="nav-item"><a class="nav-item nav-link" href="#about">About</a></li>
+	<li class="nav-item"><a class="nav-item nav-link" href="#projects">Projects</a></li>
+	<li class="nav-item"><a class="nav-item nav-link" href="#contact">Contact</a></li>
+	</ul>
+	<span class="navbar-text">Web and Mobile Developer, OSU Alumni</span>
+	</ul>
 </nav>
 	
 <div id="about" class="parallax">
-	<div class="jumbotron my-content">
+	<div id="forest"></div>
+	<div class="container my-content">
 		<h1 class="brand">Mikky Cecil</h1>
-		<p>Coming Soon</p>
+		<p>Me, age 10: making Neopets layouts for my friends</p>
+		<p>Me, age 17: claiming that I was going to "make the new Facebook" in my senior quote</p>
+		<p>Me, now: B.S. in Computer Science, 2 years of internship experience, and ready to unleash this ambition on some poor, unsuspecting code! (Maybe your web application? <a href="#contact">Contact me!</a>)</p>
+		<p>#GlowUp</p>
 	</div>
+	<button class="btn btn-outline-light" id="twinkleToggle" value="stop">Stop Twinkling</button>
 </div>
 
 <!-- <div id="arrow" class="parallax"> -->
-<div class="navbar navbar-dark bg-dark justify-content-center" id="downarrow">
-	<a class="nav-item" href="#projects"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+<div class="navbar navbar-dark bg-dark arrow justify-content-center" id="down-to-projects">
+	<div><a class="nav-item" href="#projects"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></div>
 </div>
 
 <div id="projects" class="parallax">
@@ -47,6 +59,25 @@
 		<p><a href="#about">Back to top</a></p>
 	</div>
 </div>
+
+<div class="navbar justify-content-center arrow" id="down-to-contact">
+	<div><a class="nav-item" href="#contact"><i class="fa fa-chevron-down" aria-hidden="true"></i> </a></div>
+</div>
+
+<div id="contact" class="parallax">
+	<div class="container">
+		<center>
+			mikkycecil@gmail.com
+			<br><br>
+			<button class="sm-icon btn btn-outline-dark"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+			<button class="sm-icon btn btn-outline-dark"><i class="fa fa-github" aria-hidden="true"></i></button>
+		</center>
+	</div>
+</div>
+
+<!-- <div class="navbar navbar-dark bg-dark justify-content-center arrow" id="back-to-top">
+	<div><a class="nav-item" href="#about"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
+</div> -->
 
 </body>
 </html>

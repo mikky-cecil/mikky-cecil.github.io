@@ -40,19 +40,58 @@ h1{
 	margin: auto;
 }
 
+.sm-icon{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 #about{
 	background-image: linear-gradient(to bottom, #000000 0%, #1B183F 50%, #233470 70%, #FFBAD3 100%);
 	height: 93%;
+	color: #FFFFFF;
 }
 
-#downarrow{
-	height: 7%;
+#about p{
+	font-family: "Inconsolata";
+}
+
+#contact{
+	background-color: #e9ecef;
+	height: 20%;
+	color: #7F7F7F;
+	font-family: "Raleway";
+}
+
+#down-to-contact{
+	background-color: #e9ecef;
+	box-shadow: 0 -10px 10px -10px black;
 }
 
 #projects{
 	/*background-image: linear-gradient(to top, white 50%,black 100%), url("space.jpg");*/
 	background-image: linear-gradient(to bottom, white 50%,black 100%), url("flowers.jpg");
 	background-blend-mode: multiply;
-	height: 100%;
+	height: 93%;
 	background-position: top;
+}
+
+.arrow{
+	height: 7%;
+}
+
+#twinkleToggle{
+	position: absolute;
+	top: 80%;
+	left: 2%;
+}
+
+#forest{
+	background-image: url("http://www.clker.com/cliparts/q/L/o/j/C/Q/forest-hi.png");
+	background-position: center;
+	background-repeat: repeat-x;
+	background-size: auto 100%;
+	position: absolute;
+	bottom: 0%;
+	height: 35%;
+	width: 100%;
 }
