@@ -61,9 +61,11 @@ var buildStars = function(container){
  		}, starColors));
  		container.append(star);
 
- 		with ({x:star}){
-	 		twinkle(x);
-	 	}
+ 		if (size >= 2){
+	 		with ({x:star}){
+		 		twinkle(x);
+		 	}
+		}
  	}
 };
 
