@@ -168,4 +168,12 @@ $(document).ready(function(){
 
 	buildStars(starCometContainer);
 	startComets(starCometContainer);
+
+	$('button.linkedin').click(function(){
+		console.log("click");
+		window.location = "https://www.linkedin.com/in/mikky-cecil-86545658/";
+	});
+	$('button.github').click(function(){
+		window.location = "https://github.com/mikky-cecil";
+	});
 });
