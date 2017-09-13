@@ -6,7 +6,62 @@ var twinkle = function(star){
 		star.toggle(500);
 		twinkle(star);
 	}, Math.floor(Math.random() * 15000)));
-}
+};
+
+var getStarColors = function(g){
+	return {
+		"background": "-webkit-radial-gradient" + g, /* Safari 5.1- 6.0 */
+		"background": "-o-radial-gradient" + g, /* Opera 11.6-12.0 */
+		"background": "-moz-radial-gradient" + g, /* Firefox 3.6-15 */
+		"background": "radial-gradient" + g
+	};
+};
+
+var getStarCSS = function(size, top, left, color){
+	var g = "(" + color + " 25%, rgba(0,0,0,0)) 100%";
+	return $.extend({
+		"display": "block",
+		"background": color,
+		"position": "absolute",
+		"z-index": "0",
+		"top": top + "%",
+		"left": left + "%",
+		"width": size + "px",
+		"height": size + "px",
+		"-moz-border-radius": (size/2) + "px",
+		"-webkit-border-radius": (size/2) + "px",
+		"border-radius": (size/2) + "px"
+	}, getStarColors(g));
+};
+
+var startComets = function(container){
+	var sky = $("<div id=\"comet-container\"></div>");
+ 	container.append(sky);
+
+	// TODO: this needs work
+	var color = "#FFFFFF";
+	var left = Math.floor(Math.random() * 75) + 25; /* comets will go right to left */
+	var comet = $("<div class=\"comet\"></div>")
+		.css($.extend(getStarCSS(6, 0, left, color), {
+			"box-shadow": "4px -4px 5px rgba(200, 225, 255, 1)"
+		}));
+	sky.append(comet);
+	comet.animate({
+		"top": "70%",
+		"left": (left - 50) + "%"
+	}, {duration: 1500, queue: false, complete: function(){
+		comet.remove();
+	}});
+	// comet.animate({
+	// 	"opacity": "0"
+	// }, {duration: 1500, queue: false});
+	comet.toggle(1500);
+
+	/* wait for the next comet */
+	timeOuts.push(setTimeout(function(){
+		startComets(container);
+	}, Math.floor(Math.random() * 15000)));
+};
 
 var buildStars = function(container){
 
@@ -18,7 +73,7 @@ var buildStars = function(container){
 
  		// return Math.floor(top);
  		return top;
- 	}
+ 	};
 
  	var getColor = function(){
  		return [
@@ -28,33 +83,7 @@ var buildStars = function(container){
  			"rgba(200, 225, 255, 1)", /* blue */
  			"rgba(255, 225, 200, 1)", /* red */
  			"rgba(255, 240, 240, 1)"][Math.floor(Math.random() * 6)]; /* yellow */
- 	}
-
- 	var getStarColors = function(g){
- 		return {
- 			"background": "-webkit-radial-gradient" + g, /* Safari 5.1- 6.0 */
-  			"background": "-o-radial-gradient" + g, /* Opera 11.6-12.0 */
-  			"background": "-moz-radial-gradient" + g, /* Firefox 3.6-15 */
-  			"background": "radial-gradient" + g
- 		};
- 	}
-
- 	var getStarCSS = function(size, top, left, color){
- 		var g = "(" + color + " 25%, rgba(0,0,0,0)) 100%";
- 		return $.extend({
- 			"display": "block",
- 			"background": color,
- 			"position": "absolute",
- 			"z-index": "0",
- 			"top": top + "%",
- 			"left": left + "%",
- 			"width": size + "px",
- 			"height": size + "px",
- 			"-moz-border-radius": (size/2) + "px",
- 			"-webkit-border-radius": (size/2) + "px",
- 			"border-radius": (size/2) + "px"
- 		}, getStarColors(g));
- 	}
+ 	};
 
  	/* make sure the stars are underneath the content */
  	container.find(".my-content").css("z-index", 1);
@@ -82,58 +111,29 @@ var buildStars = function(container){
 		}
  	}
 
-	var sky = $("<div id=\"comet-container\"></div>");
- 	container.append(sky);
-
- 	var makeComet = function(){
-	 	/* Comets */
-		// TODO: this needs work
-		var color = "#FFFFFF";
-		var left = Math.floor(Math.random() * 75) + 25; /* comets will go right to left */
-		var comet = $("<div class=\"comet\"></div>")
-			.css($.extend(getStarCSS(6, 0, left, color), {
-				"box-shadow": "4px -4px 5px rgba(200, 225, 255, 1)"
-			}));
-		sky.append(comet);
-		comet.animate({
-			"top": "70%",
-			"left": (left - 50) + "%"
-		}, {duration: 1500, queue: false, complete: function(){
-			comet.remove();
-		}});
-		// comet.animate({
-		// 	"opacity": "0"
-		// }, {duration: 1500, queue: false});
-		comet.toggle(1500);
-
-		/* wait for the next comet */
-		timeOuts.push(setTimeout(function(){
-			makeComet();
-		}, Math.floor(Math.random() * 15000)));
-	};
-
-	makeComet();
+	startComets(container);
 };
 
-var stopTwinkling = function(){
-	console.log("gunna stop");
-	$(timeOuts).each(function(timeOut){
-		clearTimeout(timeOut);
-		timeOuts = [];
-	});
+var stopTwinkling = function(container){
+	for (i = 0; i < timeOuts.length; i++){
+		clearTimeout(timeOuts[i]);
+	}
+
+	timeOuts = [];
 };
 
-var restartTwinkling = function () {
-	$('.star').each(function(i, star){
+var restartTwinkling = function (container) {
+	container.find('.star').each(function(i, star){
 		if (i > 100){
 			return false;
 		}
-		// console.log($(star));
 		twinkle($(star));
 	});
+	startComets(container);
 };
 
 $(document).ready(function(){
+	var starCometContainer = $('#about');
 	$('a[href^="#"]').on('click', function(e){
 		e.preventDefault();
 
@@ -147,24 +147,25 @@ $(document).ready(function(){
 
 	/* inactive tab, stop twinkling */
 	$(window).blur(function(){
-		stopTwinkling();
+		stopTwinkling(starCometContainer);
 	});
 
 	/* active tab, start twinkling again*/
 	$(window).focus(function(){
-		restartTwinkling();
+		restartTwinkling(starCometContainer);
 	});
 
 	$('#twinkleToggle').data({'twinkles': 'on'});
 	$('#twinkleToggle').click(function(){
 		if ($(this).data('twinkles') == 'on'){
-			stopTwinkling();
+			stopTwinkling(starCometContainer);
 			$(this).html("<i class=\"em em-sparkles\"></i>").data({'twinkles': 'off'});
 		}else{
-			restartTwinkling();
+			restartTwinkling(starCometContainer);
 			$(this).html("Stop Twinkling").data({'twinkles': 'on'});
 		}
 	});
 
-	buildStars($('#about'));
+	buildStars(starCometContainer);
+	startComets(starCometContainer);
 });
