@@ -62,6 +62,11 @@ h1{
 	font-family: "Raleway";
 }
 
+#back-to-top{
+	background-color: #e9ecef;
+	/*box-shadow: 0 -10px 10px -10px black;*/
+}
+
 #down-to-contact{
 	background-color: #e9ecef;
 	box-shadow: 0 -10px 10px -10px black;
