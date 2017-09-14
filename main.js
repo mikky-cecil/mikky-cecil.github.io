@@ -131,6 +131,8 @@ var restartTwinkling = function (container) {
 $(document).ready(function(){
 	var starCometContainer = $('#about');
 	var stars = 400;
+	var twinkleMsg = "<i class=\"em em-sparkles\"></i>";
+	var stopTwinkleMsg = "Stop Twinkling";
 
 	/* Animate scrolling for anchor links */
 	$('a[href^="#"]').on('click', function(e){
@@ -150,6 +152,7 @@ $(document).ready(function(){
 		$('.my-content').css('top', $('#navbar1').height() + 40 + 'px');
 		/* less stars */
 		stars = 100;
+		stopTwinkleMsg = "<i class=\"em em-no_entry_sign\"></i><i class=\"em em-sparkles\"></i>";
 	}
 
 	/* inactive tab, stop twinkling */
@@ -167,10 +170,10 @@ $(document).ready(function(){
 	$('#twinkleToggle').click(function(){
 		if ($(this).data('twinkles') == 'on'){
 			stopTwinkling(starCometContainer);
-			$(this).html("<i class=\"em em-sparkles\"></i>").data({'twinkles': 'off'});
+			$(this).html(twinkleMsg).data({'twinkles': 'off'});
 		}else{
 			restartTwinkling(starCometContainer);
-			$(this).html("Stop Twinkling").data({'twinkles': 'on'});
+			$(this).html(stopTwinkleMsg).data({'twinkles': 'on'});
 		}
 	});
 

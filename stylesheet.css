@@ -22,6 +22,10 @@ body, html{
 	-webkit-text-fill-color: transparent
 }*/
 
+.only-for-mobile-landscape{
+	display: none;
+}
+
 .parallax{
 	background-attachment: fixed;
 	background-position: center;
@@ -33,6 +37,8 @@ body, html{
 	position: relative;
 	top: 25%;
 	width: 75%;
+	max-height: 65%;
+	overflow-y: auto;
 	margin: auto;
 }
 
@@ -97,15 +103,8 @@ body, html{
 	width: 100%;
 }
 
-@media only screen and (max-width: 500px){
-	/* turn off parallax */
-
-	.parallax{
-		/*background-attachment: fixed;*/
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
+/* most mobile screens */
+@media only screen and (max-width: 800px){
 
 	.my-content{
 		top: 10%;
@@ -120,5 +119,20 @@ body, html{
 		display: none;
 	}
 
-	/* decrease stars? */
+}
+
+/* some mobile screens in landscape mode */
+@media only screen and (max-height: 400px){
+
+	.not-for-mobile-landscape{
+		display: none;
+	}
+	.only-for-mobile-landscape{
+		display: block;
+	}
+
+	#twinkleToggle{
+		position: static;
+	}
+
 }
