@@ -38,7 +38,6 @@ var startComets = function(container){
 	var sky = $("<div id=\"comet-container\"></div>");
  	container.append(sky);
 
-	// TODO: this needs work
 	var color = "#FFFFFF";
 	var left = Math.floor(Math.random() * 75) + 25; /* comets will go right to left */
 	var comet = $("<div class=\"comet\"></div>")
@@ -52,9 +51,6 @@ var startComets = function(container){
 	}, {duration: 1500, queue: false, complete: function(){
 		comet.remove();
 	}});
-	// comet.animate({
-	// 	"opacity": "0"
-	// }, {duration: 1500, queue: false});
 	comet.toggle(1500);
 
 	/* wait for the next comet */
@@ -63,7 +59,7 @@ var startComets = function(container){
 	}, Math.floor(Math.random() * 15000)));
 };
 
-var buildStars = function(container){
+var buildStars = function(container, stars){
 
  	var getTop = function(){
  		var top = Math.random() * 70;
@@ -91,8 +87,8 @@ var buildStars = function(container){
  	container.append(sky);
 
  	/* generate stars */
- 	for (var i = 0; i < 400; i++){
- 		if (i < 200){
+ 	for (var i = 0; i < stars; i++){
+ 		if (i < stars/2){
 	 		var size = Math.floor(Math.random() * 3) * 2;
 	 	}else{
 	 		var size = 2;
@@ -104,7 +100,7 @@ var buildStars = function(container){
  		sky.append(star);
 
  		/* make some of them twinkle */
- 		if (i <= 100){
+ 		if (i <= stars/4){
 	 		with ({x:star}){
 		 		twinkle(x);
 		 	}
@@ -134,6 +130,9 @@ var restartTwinkling = function (container) {
 
 $(document).ready(function(){
 	var starCometContainer = $('#about');
+	var stars = 400;
+
+	/* Animate scrolling for anchor links */
 	$('a[href^="#"]').on('click', function(e){
 		e.preventDefault();
 
@@ -145,6 +144,14 @@ $(document).ready(function(){
 		}, 900, 'swing');
 	});
 
+	/* mobile stuff */
+	if ($('.not-for-mobile').is(':hidden')){
+		/* mobile content placement */
+		$('.my-content').css('top', $('#navbar1').height() + 40 + 'px');
+		/* less stars */
+		stars = 100;
+	}
+
 	/* inactive tab, stop twinkling */
 	$(window).blur(function(){
 		stopTwinkling(starCometContainer);
@@ -155,6 +162,7 @@ $(document).ready(function(){
 		restartTwinkling(starCometContainer);
 	});
 
+	/* twinkle button */
 	$('#twinkleToggle').data({'twinkles': 'on'});
 	$('#twinkleToggle').click(function(){
 		if ($(this).data('twinkles') == 'on'){
@@ -166,9 +174,12 @@ $(document).ready(function(){
 		}
 	});
 
-	buildStars(starCometContainer);
+	/* stars + comets */
+	buildStars(starCometContainer, stars);
 	startComets(starCometContainer);
 
+
+	/* social media buttons */
 	$('button.linkedin').click(function(){
 		console.log("click");
 		window.location = "https://www.linkedin.com/in/mikky-cecil-86545658/";

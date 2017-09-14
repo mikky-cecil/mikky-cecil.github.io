@@ -4,10 +4,6 @@ body, html{
 	/*font-family: "Oxygen";*/
 }
 
-h1{
-	font-family: "Audiowide", cursive;
-}
-
 .brand{
 	font-family: "Audiowide", cursive;
 }
@@ -99,4 +95,30 @@ h1{
 	bottom: 0%;
 	height: 35%;
 	width: 100%;
+}
+
+@media only screen and (max-width: 500px){
+	/* turn off parallax */
+
+	.parallax{
+		/*background-attachment: fixed;*/
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.my-content{
+		top: 10%;
+		width: 95%;
+	}
+
+	.brand{
+		font-size: 24px;
+	}
+
+	.not-for-mobile{
+		display: none;
+	}
+
+	/* decrease stars? */
 }
