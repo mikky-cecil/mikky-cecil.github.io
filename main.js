@@ -184,10 +184,18 @@ $(document).ready(function(){
 
 	/* social media buttons */
 	$('button.linkedin').click(function(){
-		console.log("click");
 		window.location = "https://www.linkedin.com/in/mikky-cecil-86545658/";
 	});
 	$('button.github').click(function(){
 		window.location = "https://github.com/mikky-cecil";
+	});
+	$('button.bitbucket').click(function(){
+		window.location = "https://bitbucket.org/mikkycecil";
+	});
+
+	/* enable tooltips */
+	$('body').tooltip({
+	    selector: '[data-toggle="tooltip"]',
+	    container: 'body'
 	});
 });

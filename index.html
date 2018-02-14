@@ -8,10 +8,16 @@
 
 
     <!-- Libraries -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Popper -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Fonts/Emojis -->
 	<script src="https://use.fontawesome.com/91d6c4113e.js"></script>
 	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland|Megrim|Metal+Mania|Modak|Press+Start+2P|Inconsolata|Raleway" rel="stylesheet">
 
 	<!-- Mine -->
@@ -19,25 +25,26 @@
 	<script src="main.js"></script>
 </head>
 
-
 <body data-spy="scroll" data-target="#navbar1">
 
+<!-- Navbar -->
 <nav class="navbar fixed-top navbar-dark bg-dark" id="navbar1">
 	<ul class="nav">
 	<li class="nav-item not-for-mobile"><span class="nav-item navbar-brand brand">Mikky Cecil</span></li>
-	<li class="nav-item not-for-mobile"><button class="sm-icon linkedin btn btn-outline-light"><i class="fa fa-linkedin" aria-hidden="true"></i></button></li>
-	<li class="nav-item not-for-mobile"><button class="sm-icon github btn btn-outline-light"><i class="fa fa-github" aria-hidden="true"></i></button></li>
+	<li class="nav-item not-for-mobile"><button class="sm-icon linkedin btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></button></li>
+	<li class="nav-item not-for-mobile"><button class="sm-icon github btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></button></li>
 	<li class="nav-item"><a class="nav-item nav-link" href="#about">About</a></li>
-	<!-- <li class="nav-item"><a class="nav-item nav-link" href="#projects">Projects</a></li> -->
+	<li class="nav-item"><a class="nav-item nav-link" href="#projects">Projects</a></li>
 	<li class="nav-item"><a class="nav-item nav-link" href="#contact">Contact</a></li>
 	</ul>
 	<li class="nav-item only-for-mobile-landscape"><button class="btn btn-outline-light" id="twinkleToggle" value="stop"><i class="em em-no_entry_sign"></i><i class="em em-sparkles"></i></button></li>
 	<span class="navbar-text not-for-mobile">Web and Mobile Developer, OSU Alumni</span>
 </nav>
 	
+<!-- About -->
 <div id="about" class="parallax">
 	<div id="forest"></div>
-	<div class="container my-content">
+	<div class="container about-content">
 		<h1 class="brand">Mikky Cecil</h1>
 		<p>Me, age 10: making Neopets layouts for my friends</p>
 		<p>Me, age 17: claiming that I was going to "make the new Facebook" in my senior quote</p>
@@ -45,38 +52,119 @@
 		<p>#GlowUp</p>
 	</div>
 	<button class="btn btn-outline-light not-for-mobile-landscape" id="twinkleToggle" value="stop">Stop Twinkling</button>
-</div>
+</div> <!-- /#about -->
 
 <div class="navbar navbar-dark bg-dark arrow justify-content-center" id="down-to-projects">
-	<div><a class="nav-item" href="#contact"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></div>
+	<div><a class="nav-item" href="#projects"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></div>
 </div>
 
-<!-- <div id="projects" class="parallax">
-	<div class="jumbotron my-content">
-		<h1>Projects</h1>
-		<p>Coming Soon</p>
-		<p><a href="#about">Back to top</a></p>
+<!-- Projects -->
+<div id="projects" class="parallax">
+	<div class="jumbotron projects-content">
+		<h2 class="brand">Projects</h2>
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-sm-3 rounded border border-secondary">
+					<a href="http://flowersofcorvallis.appspot.com"><img src="flowersofcorvallis.png"><br>Flowers of Corvallis</a>
+				</div> -->
+				<!-- <div class="project-thumb col-sm-3 rounded border border-secondary bg-light">
+					<a href="" data-toggle="modal" data-target="#sampleProject">NodeJS Sample Project<br><br><img src="./nodeJSSampleScreenshots/thumb.png"></a>
+				</div> -->
+				<div class="project-thumb col-sm-3 rounded border border-secondary bg-light">
+					<a href="" data-toggle="modal" data-target="#ramenGen">RamenGen<br><br><img src="./ramenGenScreenshots/thumb.png"></a>
+				</div>
+
+			</div>
+		</div>
+		<br><a href="#about">Back to top</a>
 	</div>
-</div> -->
+
+	<!-- NodeJS/Express Sample Project -->
+	<!-- <div class="modal fade" id="sampleProject" tabindex="-1" role="dialog" aria-labelledby="sampleProject" aria-hidden="true">
+	 	<div class="modal-dialog modal-lg" role="document">
+	   		<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title">NodeJS and Express Sample Project</h5>
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          			<span aria-hidden="true">&times;</span>
+	        		</button>
+			    </div>
+		    	<div class="modal-body">
+		    		<p><a href="" target="_blank">See code on BitBucket</a></p>
+		        	<p>This is a sample web application that demonstrates the following skills:</p>
+		        	<ul>
+		        		<li>REST API</li>
+		        		<li>MongoDB Nonrelational Database</li>
+		        		<li>NodeJS and Express</li>
+		        		<li>Mocha test framework</li>
+		        		<li>Javascript and jQuery</li>
+		        		<li>Bootstrap UI development</li>
+		        	</ul>
+		        	<img src="./nodeJSSampleScreenshots/UI.png" width="95%">
+		    	</div>
+			    <div class="modal-footer">
+			    	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    	</div>
+		    </div>
+	 	</div>
+	</div> -->
+
+	<!-- RamenGen Project -->
+	<div class="modal fade" id="ramenGen" tabindex="-1" role="dialog" aria-labelledby="ramenGen" aria-hidden="true">
+	 	<div class="modal-dialog modal-lg" role="document">
+	   		<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title">RamenGen</h5>
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          			<span aria-hidden="true">&times;</span>
+	        		</button>
+			    </div>
+		    	<div class="modal-body">
+		    		<p><a href="https://github.com/mikky-cecil/ramenGen" target="_blank">See code on GitHub</a></p>
+		        	<p>RamenGen is a website for users to share their instant ramen recipes and discover new ones. It started out as a PHP and MySQL-based class project at OSU where the requirements were:</p>
+		        	<ul>
+		        		<li>Have at least 2 tables in a MySQL database</li>
+		        		<li>Use sessions to keep users logged in</li>
+		        		<li>Use AJAX</li>
+		        		<li>Use both client-side and server-side validation</li>
+		        		<li>Keep passwords secure with a hash</li>
+		        	</ul>
+		        	<p>I ended up going beyond the project requirements and having a lot of fun with it. I added REST operations (for the users and recipes) and a random recipe generator. I'm working on transferring the project over to a new PHP server, but for now, here are screenshots and the code itself.</p>
+		        	<img src="./ramenGenScreenshots/recipeGenerated.png"><br><br>
+		        	<img src="./ramenGenScreenshots/addRamen.png">
+		    	</div>
+			    <div class="modal-footer">
+			    	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    	</div>
+		    </div>
+	 	</div>
+	</div>
+
+</div> <!-- /#projects -->
+
+<div class="navbar justify-content-center arrow" id="down-to-contact">
+	<div><a class="nav-item" href="#contact"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></div>
+</div> 
 
 <div id="contact" class="parallax">
 	<div class="container" style="padding-top: 2.5%">
 		<center>
 			mikkycecil@gmail.com
 			<br><br>
-			<button class="sm-icon linkedin btn btn-outline-dark"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
-			<button class="sm-icon github btn btn-outline-dark"><i class="fa fa-github" aria-hidden="true"></i></button>
+			<button type="button" class="sm-icon linkedin btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+			<button class="sm-icon bitbucket btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="BitBucket"><i class="fa fa-bitbucket" aria-hidden="true"></i></button>
+			<button class="sm-icon github btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></button>
 		</center>
 	</div>
 </div>
 
-<div class="navbar justify-content-center arrow" id="back-to-top">
-	<div><a class="nav-item" href="#about"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
-</div>
-
-<!-- <div class="navbar navbar-dark bg-dark justify-content-center arrow" id="back-to-top">
+<!-- <div class="navbar justify-content-center arrow" id="back-to-top">
 	<div><a class="nav-item" href="#about"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 </div> -->
+
+<div class="navbar navbar-dark bg-dark justify-content-center arrow" id="back-to-top">
+	<div><a class="nav-item" href="#about"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
+</div>
 
 </body>
 </html>
