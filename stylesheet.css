@@ -115,6 +115,11 @@ body, html{
 	background-position: top;
 }
 
+#projects .project-title{
+	font-family: "Inconsolata";
+	font-size: 20px;
+}
+
 .arrow{
 	height: 7%;
 }

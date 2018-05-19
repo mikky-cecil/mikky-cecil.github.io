@@ -38,7 +38,7 @@
 	<li class="nav-item"><a class="nav-item nav-link" href="#contact">Contact</a></li>
 	<li class="nav-item"><a class="nav-item nav-link" href="./MikkyCecilResume.pdf" target="_blank">Resume</a></li>
 	</ul>
-	<li class="nav-item only-for-mobile-landscape"><button class="btn btn-outline-light" id="twinkleToggle" value="stop"><i class="em em-no_entry_sign"></i><i class="em em-sparkles"></i></button></li>
+	<!-- <li class="nav-item only-for-mobile-landscape"><button class="btn btn-outline-light" id="twinkleToggle" value="stop"><i class="em em-no_entry_sign"></i><i class="em em-sparkles"></i></button></li> -->
 	<span class="navbar-text not-for-mobile">Web and Mobile Developer, OSU Alumni</span>
 </nav>
 	
@@ -52,7 +52,7 @@
 		<p>Me, now: B.S. in Computer Science, 2 years of internship experience, and ready to unleash this ambition on some poor, unsuspecting code! (Maybe your web application? <a href="#contact">Contact me!</a>)</p>
 		<p>#GlowUp</p>
 	</div>
-	<button class="btn btn-outline-light not-for-mobile-landscape" id="twinkleToggle" value="stop">Stop Twinkling</button>
+	<!-- <button class="btn btn-outline-light not-for-mobile-landscape" id="twinkleToggle" value="stop">Stop Twinkling</button> -->
 </div> <!-- /#about -->
 
 <div class="navbar navbar-dark bg-dark arrow justify-content-center" id="down-to-projects">
@@ -68,11 +68,22 @@
 				<!-- <div class="col-sm-3 rounded border border-secondary">
 					<a href="http://flowersofcorvallis.appspot.com"><img src="flowersofcorvallis.png"><br>Flowers of Corvallis</a>
 				</div> -->
-				<!-- <div class="project-thumb col-sm-3 rounded border border-secondary bg-light">
-					<a href="" data-toggle="modal" data-target="#sampleProject">NodeJS Sample Project<br><br><img src="./nodeJSSampleScreenshots/thumb.png"></a>
-				</div> -->
 				<div class="project-thumb col-sm-3 rounded border border-secondary bg-light">
-					<a href="" data-toggle="modal" data-target="#ramenGen">RamenGen<br><br><img src="./ramenGenScreenshots/thumb.png"></a>
+					<a href="" class="project-title" data-toggle="modal" data-target="#sampleProject">Washtub Inventory<br><img src="./nodeJSSampleScreenshots/ThumbPossibly.png" class="border"></a><br>
+					<span class="badge badge-secondary">NodeJS</span>
+					<span class="badge badge-secondary">Express</span>
+					<span class="badge badge-secondary">Javascript</span>
+					<span class="badge badge-secondary">jQuery</span>
+					<span class="badge badge-secondary">Mocha</span>
+					<span class="badge badge-secondary">MongoDB</span>
+					<span class="badge badge-secondary">Bootstrap</span>
+				</div>
+				<div class="project-thumb col-sm-3 rounded border border-secondary bg-light">
+					<a href="" class="project-title" data-toggle="modal" data-target="#ramenGen">RamenGen<br><img src="./ramenGenScreenshots/thumb.png" class="border"></a><br>
+					<span class="badge badge-secondary">PHP</span>
+					<span class="badge badge-secondary">Javascript</span>
+					<span class="badge badge-secondary">jQuery</span>
+					<span class="badge badge-secondary">MySQL</span>
 				</div>
 
 			</div>
@@ -81,34 +92,36 @@
 	</div>
 
 	<!-- NodeJS/Express Sample Project -->
-	<!-- <div class="modal fade" id="sampleProject" tabindex="-1" role="dialog" aria-labelledby="sampleProject" aria-hidden="true">
+	<div class="modal fade" id="sampleProject" tabindex="-1" role="dialog" aria-labelledby="sampleProject" aria-hidden="true">
 	 	<div class="modal-dialog modal-lg" role="document">
 	   		<div class="modal-content">
 	      		<div class="modal-header">
-	        		<h5 class="modal-title">NodeJS and Express Sample Project</h5>
+	        		<h5 class="modal-title">Washtub Inventory (NodeJS/Express)</h5>
 	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          			<span aria-hidden="true">&times;</span>
 	        		</button>
 			    </div>
 		    	<div class="modal-body">
-		    		<p><a href="" target="_blank">See code on BitBucket</a></p>
-		        	<p>This is a sample web application that demonstrates the following skills:</p>
+		    		<p><a href="https://github.com/mikky-cecil/washtubExpressSite" target="_blank">See code on GitHub</a></p>
+		        	<p>A web application for tracking machine inventory for the Washtub Laundromat. This web application demonstrates the following skills:</p>
 		        	<ul>
 		        		<li>REST API</li>
-		        		<li>MongoDB Nonrelational Database</li>
 		        		<li>NodeJS and Express</li>
+		        		<li>MongoDB Nonrelational Database</li>
 		        		<li>Mocha test framework</li>
 		        		<li>Javascript and jQuery</li>
-		        		<li>Bootstrap UI development</li>
+		        		<li>Bootstrap UI</li>
 		        	</ul>
-		        	<img src="./nodeJSSampleScreenshots/UI.png" width="95%">
+		        	<img src="./nodeJSSampleScreenshots/InitialIndex.png" width="95%">
+		        	<img src="./nodeJSSampleScreenshots/Index.png" width="95%">
+		        	<img src="./nodeJSSampleScreenshots/AddMachineErrors.png" width="50%">
 		    	</div>
 			    <div class="modal-footer">
 			    	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 		    	</div>
 		    </div>
 	 	</div>
-	</div> -->
+	</div>
 
 	<!-- RamenGen Project -->
 	<div class="modal fade" id="ramenGen" tabindex="-1" role="dialog" aria-labelledby="ramenGen" aria-hidden="true">
