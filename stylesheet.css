@@ -120,6 +120,18 @@ body, html{
 	font-size: 20px;
 }
 
+#projects h2{
+	float: left;
+}
+
+#projects span.float-right{
+	float: right;
+}
+
+.clear-fix{
+	clear: both;
+}
+
 .arrow{
 	height: 7%;
 }
