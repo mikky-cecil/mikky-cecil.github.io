@@ -1,7 +1,9 @@
 body, html{
 	height: 100%;
+}
 
-	/*font-family: "Oxygen";*/
+body{
+	overflow-x: hidden;
 }
 
 .brand{
@@ -47,11 +49,13 @@ body, html{
 
 .about-content{
 	position: relative;
-	top: 25%;
-	width: 75%;
-	max-height: 65%;
-	overflow-y: auto;
-	margin: auto;
+    top: 20vh;
+    left: 15vh;
+    width: 600px;
+    max-height: 65%;
+    overflow-y: auto;
+    margin: 0%;
+    text-align: justify;
 }
 
 .projects-content{
