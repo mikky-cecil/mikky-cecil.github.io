@@ -1,0 +1,18 @@
+
+/* If I can't see those pixels then what's the point! */
+body{
+	-webkit-font-smoothing: none;
+	image-rendering: pixelated; 
+}
+
+/* Screen resolutions this good didn't exist back then! */
+@media (min-resolution: 150dpi) {
+  body {
+    zoom: 120%;
+  }
+}
+
+/* Some goodies from the old Windows 95 defaults */
+:root{
+	--windows-default-bg: #c0c0c0;
+}
